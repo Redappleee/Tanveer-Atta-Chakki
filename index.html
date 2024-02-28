@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+<title>Tanveer Atta Chakki</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #f1f1f1f1;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+  background-color: lightgray;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: cornflowerblue;}
+
+#about {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: x-large;
+}
+
+.w3-row-padding img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}
+
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar (Sits on top) -->
+<div class="w3-top w3-bar w3-white w3-wide w3-padding w3-card">
+<a href="#home" class="w3-bar-item w3-button"><b>Tanveer</b> Atta Chakki</a>
+<!-- Float links to the right. Hide them on small screens -->
+<div class="w3-right w3-hide-small">
+<a href="#projects" class="w3-bar-item w3-button">Products</a>
+<a href="#about" class="w3-bar-item w3-button">About</a>
+<a href="#contact" class="w3-bar-item w3-button">Contact</a>
+</div>
+</div>
+
+<!-- Page Start -->
+<div id="home" class="w3-content" style="max-width:1564px">
+
+<!-- Image -->
+<div class="w3-display-container w3-content" style="max-width:1500px;">
+<img class="w3-image" src="./images/Wheat photo.jpeg" alt="Wheat Farm" width="100%">
+<div class="w3-display-middle w3-margin-top w3-center">
+<h1 class="w3-xxlarge w3-text-white w3-wide">
+  <span class="w3-padding w3-black w3-opacity-min"><b>Tanveer</b></span>
+  <span class="w3-hide-small w3-text-light-grey">Atta Chakki</span>
+</h1>
+</div>
+</div>
+
+<div class="slideshow-container">
+
+  <div class="mySlides">
+    <q>Join us on this flavorful journey and experience the goodness that Tanveer Atta Chakki brings to your table</q>
+    <p class="author">- Chairman</p>
+  </div>
+  
+  <div class="mySlides">
+    <q>In addition to our wide range of flours, we offer a variety of oils that complement your cooking endeavors. From premium cooking oils that enhance the flavors of your dishes to oils specifically crafted for baking, we provide options that meet the demands of different cuisines and cooking styles</q>
+    <p class="author">- Chairman</p>
+  </div>
+  
+  <div class="mySlides">
+    <q>At Tanveer Atta Chakki, we believe in forging strong relationships with our customers. We prioritize their satisfaction by offering exceptional products and maintaining strict quality control throughout our processes. We continuously invest in modern technologies and stay updated with industry trends to exceed expectations and deliver products that consistently meet the evolving needs of our customers</q>
+    <p class="author">- CEO</p>
+  </div>
+  
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+  
+  </div>
+  
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+  </div>
+  
+  <script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+  </script>
+
+<!-- Projects -->
+<div id="projects" class="w3-container w3-padding-32">
+<h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Products</h2>
+</div>
+
+<div class="w3-row-padding">
+
+<div class="w3-col l3 m6 w3-margin-bottom">
+<div class="w3-display-container">
+  <div class="w3-display-topleft w3-black w3-padding">Wheat Flour</div>
+  <img src="./images/Wheat Flour Best.jpeg" alt="Wheat Flour" style="width:100%">
+</div>
+</div>
+
+<div class="w3-col l3 m6 w3-margin-bottom">
+<div class="w3-display-container">
+  <div class="w3-display-topleft w3-black w3-padding">Gram Flour (Besan)</div>
+  <img src="./images/Besan.jpeg" alt="Gram Flour" style="width:100%">
+</div>
+</div>
+
+<div class="w3-col l3 m6 w3-margin-bottom">
+<div class="w3-display-container">
+  <div class="w3-display-topleft w3-black w3-padding">Chickpea flour</div>
+  <img src="./images/Chana Atta.webp" alt="Chana Atta" style="width:100%">
+</div>
+</div>
+
+<div class="w3-col l3 m6 w3-margin-bottom">
+<div class="w3-display-container">
+  <div class="w3-display-topleft w3-black w3-padding">Mix Atta</div>
+  <img src="./images/Mix Atta.jpeg" alt="Mix Atta" style="width:100%">
+</div>
+</div>
+
+<div class="w3-col l3 m6 w3-margin-bottom">
+<div class="w3-display-container">
+  <div class="w3-display-topleft w3-black w3-padding">Mustard Oil</div>
+  <img src="./images/Mustard-Oil-Nutritional-Value.jpg" alt="Mustard Oil" style="width:100%">
+</div>
+</div>
+
+<div class="w3-col l3 m6 w3-margin-bottom">
+<div class="w3-display-container">
+  <div class="w3-display-topleft w3-black w3-padding">Yellow Mustard Oil</div>
+  <img src="./images/mustard-oil-jpg-500x500.webp" alt="Yellow Mustard Oil" style="width:99%">
+</div>
+</div>
+
+<div class="w3-col l3 m6 w3-margin-bottom">
+<div class="w3-display-container">
+  <div class="w3-display-topleft w3-black w3-padding">Flaxseed Oil</div>
+  <img src="./images/Flaxseed oil.jpeg" alt="Flaxseed Oil" style="width:99%">
+</div>
+</div>
+
+<div class="w3-col l3 m6 w3-margin-bottom">
+<div class="w3-display-container">
+  <div class="w3-display-topleft w3-black w3-padding">Oats</div>
+  <img src="./images/Oats.jpg" alt="Oats" style="width:99%">
+</div>
+</div>
+
+</div>
+
+<!-- About -->
+<div id="about" class="w3-container w3-padding-32">
+<h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h2>
+<div>
+<div><p>At Tanveer Atta Chakki, we take immense pride in delivering high-quality products that nourish and delight our customers. As a prominent player in the food industry, we specialize in providing a wide range of products, including flour and oils, that are essential ingredients for a wholesome culinary experience.<br>
+    Quality is at the heart of everything we do. We understand the significance of using the finest ingredients, sourcing them from trusted suppliers who share our commitment to excellence. Our state-of-the-art chakki (flour mill) ensures that each grain is processed with precision, preserving its nutritional value and delivering a superior product to our valued customers.</div><br>
+    <div>
+    Our flour selection caters to diverse culinary needs, whether it's the all-purpose flour for everyday baking, whole wheat flour for a healthier alternative, or specialized flours for traditional recipes. We strive to meet the unique requirements of our customers, ensuring that our products consistently meet the highest standards of taste, texture, and nutritional value.</div><br>
+    <div>
+    Our dedication to quality, authenticity, and customer satisfaction has earned us a loyal customer base. Whether you're a home cook, professional chef, or a business in the food industry, we are here to be your trusted partner, providing you with the essential ingredients that form the foundation of your culinary creations.</div><br>
+</p>
+</div>
+
+<div class="w3-row-padding w3-grayscale">
+
+<div class="w3-col l3 m6 w3-margin-bottom">
+<img src="./images/Tanveer islam.jpeg" alt="Tanveer-ul-islam" style="width:100%">
+<h3>Tanveer-Ul-Islam</h3>
+<p class="w3-opacity">Chairman</p>
+<p>As the Chairman, they bring a wealth of experience and expertise to guide our business towards new heights. Their strategic thinking, strong business acumen, and deep understanding of the industry have been instrumental in shaping our company's growth and success.<br><br><br></p>
+<p><a href="mailto: redappleee26@gmail.com"><button class="w3-button w3-light-grey w3-block">Contact</button></a></p>
+</div>
+
+<div class="w3-col l3 m6 w3-margin-bottom">
+<img src="./images/Raiyan Islam.jpeg" alt="Raiyan Islam" style="width:100%">
+<h3>Raiyan Islam</h3>
+<p class="w3-opacity">CEO</p>
+<p>As the CEO of Tanveer Atta Chakki, Raiyan Islam brings a wealth of expertise, passion, and leadership to guide our company towards success in the food industry. With an unwavering commitment to excellence and a deep understanding of the market, Raiyan Islam plays a pivotal role in shaping our vision and driving our business forward.</p>
+<p><a href="mailto: redappleee26@gmail.com"><button class="w3-button w3-light-grey w3-block">Contact</button></a></p>
+</div>
+
+<div class="w3-col l3 m6 w3-margin-bottom">
+  <img src="./images/Random.jpg" alt="Arif Khan" style="width:100%">
+  <h3>Arif Khan</h3>
+  <p class="w3-opacity">Senior Manager</p>
+  <p>We are privileged to have an exceptional Senior Manager, whose expertise and leadership have consistently driven our organization towards success. Arif Khan, our esteemed Senior Manager, brings a wealth of experience and a passion for excellence to every aspect of our business.<br><br></p>
+  <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+  </div>
+  
+  <div class="w3-col l3 m6 w3-margin-bottom">
+  <img src="./images/Random.jpg" alt="Ajeet Kumar Saini" style="width:100%">
+  <h3>Ajeet Kumar Saini</h3>
+  <p class="w3-opacity">Manager</p>
+  <p>As a manager, Ajeet Kumar Saini embodies exceptional leadership and brings a wealth of expertise to the table. With a keen eye for detail and a strategic mindset, Ajeet Kumar Saini excels at guiding teams towards success.<br><br><br><br></p>
+  <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+  </div>
+
+</div>
+
+<!-- Contact Section -->
+<div id="contact" class="w3-container w3-padding-top-32">
+
+<h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h2>
+<p>Feel free to share your thoughts</p><b>*We are sorry for the inconvenience. We are facing some problems related to the database*</b>
+
+<form action="/action_page.php" target="_blank">
+<input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+<input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
+<input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
+<input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
+<button class="w3-button w3-black w3-section" type="submit">
+<i class="fa fa-paper-plane"></i> SEND MESSAGE
+</button>
+</form>
+
+<img src="./images/footer image.png" class="w3-image" style="width:100%">
+
+<footer class="w3-center w3-black w3-panel w3-padding-16">
+<p>All Rights Reserved &copy <a href="login page.html" title="W3.CSS" target="_blank" class="w3-hover-text-green">Raiyan Islam</a></p>
+</footer>
+</div>
+
+<!-- End page content -->
+</div>
+
+</body>
+</html>
